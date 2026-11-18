@@ -98,6 +98,7 @@ fun TurmasScreen(
                         LinearProgressIndicator(
                             progress = { if (daTurma.isEmpty()) 0f else feitos.toFloat() / daTurma.size },
                             modifier = Modifier.fillMaxWidth(),
+                            trackColor = MaterialTheme.colorScheme.primaryContainer,
                         )
                         if (alerta + atencao > 0) {
                             Spacer(Modifier.height(10.dp))

@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -62,6 +64,14 @@ fun InicioScreen(
     val emAlerta = alunos.count { it.nivel == NivelAlerta.ALERTA }
 
     Scaffold(snackbarHost = { SnackbarHost(snackbar) }) { padding ->
+        // Faixa verde fixa atrás da barra de status, para o conteúdo rolar por baixo dela sem sobrepor.
+        Column(Modifier.fillMaxSize()) {
+        Spacer(
+            Modifier
+                .fillMaxWidth()
+                .background(VerdePresente)
+                .windowInsetsTopHeight(WindowInsets.statusBars)
+        )
         Column(
             Modifier
                 .fillMaxSize()
@@ -73,7 +83,6 @@ fun InicioScreen(
                 Modifier
                     .fillMaxWidth()
                     .background(VerdePresente)
-                    .statusBarsPadding()
                     .padding(24.dp),
             ) {
                 Box(
@@ -141,6 +150,7 @@ fun InicioScreen(
                     modifier = Modifier.align(Alignment.CenterHorizontally).padding(top = 8.dp),
                 )
             }
+        }
         }
     }
 }
