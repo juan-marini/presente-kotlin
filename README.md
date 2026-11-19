@@ -11,6 +11,10 @@
 
 **ODS:** 4 Educação de qualidade (meta 4.1) e 10 Redução das desigualdades (meta 10.2).
 
+**🎥 Vídeo pitch:** https://youtu.be/gJzWQKifPXM
+
+**📦 Repositório:** https://github.com/juan-marini/presente-kotlin
+
 ---
 
 ## 1. O problema
